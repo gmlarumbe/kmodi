@@ -618,50 +618,51 @@ for all the `included files."
     ;;                               verilog-forward-sexp-function)))
 
 ;;; hydra-verilog-template
-    (defhydra hydra-verilog-template (:color blue
-                                      :hint nil)
-      "
-_i_nitial        _?_ if             _j_ fork           _A_ssign                _uc_ uvm-component
-_b_egin          _:_ else-if        _m_odule           _I_nput                 _uo_ uvm-object
-_a_lways         _f_or              _g_enerate         _O_utput
-^^               _w_hile            _p_rimitive        _=_ inout
-^^               _r_epeat           _s_pecify          _S_tate-machine         _h_eader
-^^               _c_ase             _t_ask             _W_ire                  _/_ comment
-^^               case_x_            _F_unction         _R_eg
-^^               case_z_            ^^                 _D_efine-signal
-"
-      ("a"   verilog-sk-always)
-      ("b"   verilog-sk-begin)
-      ("c"   verilog-sk-case)
-      ("f"   verilog-sk-for)
-      ("g"   verilog-sk-generate)
-      ("h"   verilog-sk-header)
-      ("i"   verilog-sk-initial)
-      ("j"   verilog-sk-fork)
-      ("m"   verilog-sk-module)
-      ("p"   verilog-sk-primitive)
-      ("r"   verilog-sk-repeat)
-      ("s"   verilog-sk-specify)
-      ("t"   verilog-sk-task)
-      ("w"   verilog-sk-while)
-      ("x"   verilog-sk-casex)
-      ("z"   verilog-sk-casez)
-      ("?"   verilog-sk-if)
-      (":"   verilog-sk-else-if)
-      ("/"   verilog-sk-comment)
-      ("A"   verilog-sk-assign)
-      ("F"   verilog-sk-function)
-      ("I"   verilog-sk-input)
-      ("O"   verilog-sk-output)
-      ("S"   verilog-sk-state-machine)
-      ("="   verilog-sk-inout)
-      ("uc"  verilog-sk-uvm-component)
-      ("uo"  verilog-sk-uvm-object)
-      ("W"   verilog-sk-wire)
-      ("R"   verilog-sk-reg)
-      ("D"   verilog-sk-define-signal)
-      ("q"   nil nil :color blue)
-      ("C-g" nil nil :color blue))
+;; INFO: Commented to avoid loading issues with straight
+;;     (defhydra hydra-verilog-template (:color blue
+;;                                       :hint nil)
+;;       "
+;; _i_nitial        _?_ if             _j_ fork           _A_ssign                _uc_ uvm-component
+;; _b_egin          _:_ else-if        _m_odule           _I_nput                 _uo_ uvm-object
+;; _a_lways         _f_or              _g_enerate         _O_utput
+;; ^^               _w_hile            _p_rimitive        _=_ inout
+;; ^^               _r_epeat           _s_pecify          _S_tate-machine         _h_eader
+;; ^^               _c_ase             _t_ask             _W_ire                  _/_ comment
+;; ^^               case_x_            _F_unction         _R_eg
+;; ^^               case_z_            ^^                 _D_efine-signal
+;; "
+;;       ("a"   verilog-sk-always)
+;;       ("b"   verilog-sk-begin)
+;;       ("c"   verilog-sk-case)
+;;       ("f"   verilog-sk-for)
+;;       ("g"   verilog-sk-generate)
+;;       ("h"   verilog-sk-header)
+;;       ("i"   verilog-sk-initial)
+;;       ("j"   verilog-sk-fork)
+;;       ("m"   verilog-sk-module)
+;;       ("p"   verilog-sk-primitive)
+;;       ("r"   verilog-sk-repeat)
+;;       ("s"   verilog-sk-specify)
+;;       ("t"   verilog-sk-task)
+;;       ("w"   verilog-sk-while)
+;;       ("x"   verilog-sk-casex)
+;;       ("z"   verilog-sk-casez)
+;;       ("?"   verilog-sk-if)
+;;       (":"   verilog-sk-else-if)
+;;       ("/"   verilog-sk-comment)
+;;       ("A"   verilog-sk-assign)
+;;       ("F"   verilog-sk-function)
+;;       ("I"   verilog-sk-input)
+;;       ("O"   verilog-sk-output)
+;;       ("S"   verilog-sk-state-machine)
+;;       ("="   verilog-sk-inout)
+;;       ("uc"  verilog-sk-uvm-component)
+;;       ("uo"  verilog-sk-uvm-object)
+;;       ("W"   verilog-sk-wire)
+;;       ("R"   verilog-sk-reg)
+;;       ("D"   verilog-sk-define-signal)
+;;       ("q"   nil nil :color blue)
+;;       ("C-g" nil nil :color blue))
 
 ;;; imenu + outshine
     (defun modi/verilog-outshine-imenu-generic-expression (&rest _)
